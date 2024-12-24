@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Statement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Income Statement</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Net Sales</td>
+          <td><input type="number" id="netSales" value="0"></td>
+        </tr>
+        <tr>
+          <td>(-) COGS</td>
+          <td><input type="number" id="cogs" value="0"></td>
+        </tr>
+        <tr>
+          <td>Gross Profit</td>
+          <td id="grossProfit">0</td>
+        </tr>
+        <tr>
+          <td>(-) S&A Expenses</td>
+          <td><input type="number" id="expenses" value="0"></td>
+        </tr>
+        <tr>
+          <td><strong>RGEL</strong></td>
+          <td></td>
+          <td><button class="expand-btn" onclick="addRGELSection()">Add</button></td>
+        </tr>
+        <!-- Dynamic Sections will be added here -->
+        <tbody id="dynamicSections"></tbody>
+        <tr>
+          <td>NOI (EBIT)</td>
+          <td id="noi">0</td>
+        </tr>
+        <tr>
+          <td>(-) Interest Expense</td>
+          <td><input type="number" id="interestExpense" value="0"></td>
+        </tr>
+        <tr>
+          <td>Income Before Tax</td>
+          <td id="incomeBeforeTax">0</td>
+        </tr>
+        <tr>
+          <td>(-) Tax (%)</td>
+          <td><input type="number" id="taxRate" value="20"></td>
+        </tr>
+        <tr>
+          <td>IFCO</td>
+          <td id="ifco">0</td>
+        </tr>
+        <tr>
+          <td>(-) DISCO</td>
+          <td><input type="number" id="disco" value="0"></td>
+        </tr>
+        <tr>
+          <td>Net Income</td>
+          <td id="netIncome">0</td>
+        </tr>
+
+        <!-- New section for EPS -->
+        <tr>
+          <td>Ordinary Shares (Number)</td>
+          <td><input type="number" id="ordinaryShares" value="1"></td>
+        </tr>
+        <tr>
+          <td>Preferred Shares (Number)</td>
+          <td><input type="number" id="preferredShares" value="0"></td>
+        </tr>
+        <tr>
+          <td>Preferred Dividends</td>
+          <td><input type="number" id="preferredDividends" value="0"></td>
+        </tr>
+        <tr>
+          <td><strong>EPS Calculation</strong></td>
+          <td id="epsResult">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+    <button onclick="resetFields()">Reset</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
